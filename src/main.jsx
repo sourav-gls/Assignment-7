@@ -7,6 +7,7 @@ import RootLayout from './layout/RootLayout';
 import TimeLine from './pages/timeline/TimeLine';
 import Stats from './pages/stats/Stats';
 import Home from './pages/home/Home';
+import CardDetails from './pages/details/CardDetails';
 
 const router = createBrowserRouter(
   [
@@ -18,6 +19,11 @@ const router = createBrowserRouter(
        path: "/",
        element : <Home></Home>,
       },
+      {
+       path: "/home/:id",
+       element : <CardDetails></CardDetails>,
+      },
+      
       {
          path: "/timeline",
        element : <TimeLine/>,
