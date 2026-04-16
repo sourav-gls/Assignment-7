@@ -1,18 +1,24 @@
-import React from 'react';
-import { Pie, PieChart } from 'recharts';
+import React, { useContext } from 'react';
+import { Legend, Pie, PieChart, Tooltip } from 'recharts';
+import { CallCardContext } from '../../context/callCardContext';
+
 
 const Stats = () => {
-   const data = [
-  { name: 'Group A', value: 400, fill: '#0088FE' },
-  { name: 'Group B', value: 300, fill: '#00C49F' },
-  { name: 'Group C', value: 300, fill: '#FFBB28' },
-  { name: 'Group D', value: 200, fill: '#FF8042' },
+
+     const {callCards, textCards , videoCards } = useContext(CallCardContext) ;
+
+    const data = [
+  { name: 'Call', value: callCards.length, fill: '#0088FE' },
+  { name: 'Text', value: textCards.length, fill: '#00C49F' },
+  { name: 'Video', value: videoCards.length, fill: '#FFBB28' },
+  
 ];
 
-    return (
-        <div className='w-3/5 mx-auto border'>
+return(
+    <div className='bg-base-300 pt-15 pb-15'>
+    <div className='w-3/5 mx-auto item center justify-center flex bg-white rounded-3xl pt-5 pb-5 '>
         <PieChart style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
-      <pie
+      <Pie
         data={data}
         innerRadius="80%"
         outerRadius="100%"
@@ -22,11 +28,16 @@ const Stats = () => {
         // padding angle is the gap between each pie slice
         paddingAngle={5}
         dataKey="value"
-        isAnimationActive={"true"}
+        isAnimationActive={true}
       />
+    <Legend/>
+    <Tooltip/>
     </PieChart>
     </div>
-    );
+    </div>
+)
+        
+    
 };
 
 export default Stats;

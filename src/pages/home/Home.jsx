@@ -1,15 +1,24 @@
-import React, { use } from 'react';
+import React, { use, useContext } from 'react';
 import { FaPlus } from 'react-icons/fa';
 import Card from './card';
+import { CallCardContext } from '../../context/callCardContext';
 
 const cardsPromise = fetch('/data.json').then(res => res.json());
+
+ 
 
 
 
 const Home = () => {
 
 const cards = use(cardsPromise);
-console.log(cards)
+
+const onTrack = cards.filter((card => card.status==="On-Track"))
+const overDue = cards.filter((card => card.status==="Overdue"))
+
+const {callCards, textCards , videoCards } = useContext(CallCardContext) ;
+const total = callCards.length + textCards.length + videoCards.length
+
 
 
 
@@ -25,19 +34,19 @@ relationships that matter most.</p>
           </div >
           <div className='w-3/4 mx-auto grid grid-cols-4 mt-10 gap-8 '>
             <div className='bg-white text-center w-65 rounded-lg p-8'>
-                <h1 className='text-[30px] font-semibold text-[#244D3F]'>0</h1>
+                <h1 className='text-[30px] font-semibold text-[#244D3F]'>{cards.length}</h1>
                 <p className='text-gray-500'>Total Friends</p>
             </div>
             <div className='bg-white text-center w-65 rounded-lg p-8'>
-                <h1 className='text-[30px] font-semibold text-[#244D3F]'>0</h1>
+                <h1 className='text-[30px] font-semibold text-[#244D3F]'>{onTrack.length}</h1>
                 <p className='text-gray-500'>On Track</p>
             </div>
             <div className='bg-white text-center w-65 rounded-lg p-8'>
-                <h1 className='text-[30px] font-semibold text-[#244D3F]'>0</h1>
+                <h1 className='text-[30px] font-semibold text-[#244D3F]'>{overDue.length}</h1>
                 <p className='text-gray-500'>Need Attention</p>
             </div>
             <div className='bg-white text-center w-65 rounded-lg p-8'>
-                <h1 className='text-[30px] font-semibold text-[#244D3F]'>0</h1>
+                <h1 className='text-[30px] font-semibold text-[#244D3F]'>{total}</h1>
                 <p className='text-gray-500'>Interactions This Month</p>
             </div>
             
