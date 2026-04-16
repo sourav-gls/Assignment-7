@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Card = ({card}) => {
     return (
-        <div className='w-65 bg-white text-center p-7 rounded-lg shadow-sm '>
+        <Link to= {`/home/${card.id}`} className='w-65 bg-white text-center p-7 rounded-lg shadow-sm '>
                       <div className='flex justify-center'>
                       <img src={card.avatar} alt="" className='w-20 h-20 rounded-full mb-3' />
                       </div>
@@ -19,7 +20,7 @@ const Card = ({card}) => {
                            "badge-success"}`}>{card.status}
                            </div>
                       </div>
-                    </div>
+                    </Link>
     );
 };
 

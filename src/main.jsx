@@ -8,6 +8,7 @@ import TimeLine from './pages/timeline/TimeLine';
 import Stats from './pages/stats/Stats';
 import Home from './pages/home/Home';
 import CardDetails from './pages/details/CardDetails';
+import CallCardProvider from './context/CallCardProvider';
 
 const router = createBrowserRouter(
   [
@@ -43,8 +44,10 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+
+    <CallCardProvider>
    <RouterProvider router={router} />
-    
+    </CallCardProvider>
 
   </StrictMode>,
 )

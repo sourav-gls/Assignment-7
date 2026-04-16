@@ -1,9 +1,10 @@
-import React, { use } from 'react';
+import React, { use, useContext } from 'react';
 import { FaBoxArchive } from 'react-icons/fa6';
 import { LuPhoneCall, LuVideo } from 'react-icons/lu';
 import { MdAddAlert, MdOutlineTextsms } from 'react-icons/md';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { useParams } from 'react-router';
+import { CallCardContext } from '../../context/callCardContext';
 
 
 const cardsPromise = fetch('/data.json').then(res => res.json());
@@ -18,6 +19,26 @@ console.log(id)
 
 const expectedCard = cards.find((card)=> card.id == id);
 console.log(expectedCard)
+
+
+const {callCards ,setCallCards ,textCards , setTextCards ,videoCards , setVideoCards} = useContext(CallCardContext)
+
+const handleCallCard = () =>{
+    setCallCards([...callCards , expectedCard])
+
+}
+const handleTextCard = () =>{
+    setTextCards([...textCards , expectedCard])
+
+}
+
+const handleVideoCard = () =>{
+    setVideoCards([...videoCards , expectedCard])
+
+}
+
+
+
 
     return (
         <div className='bg-base-300 pt-15 pb-15'>
@@ -73,15 +94,15 @@ console.log(expectedCard)
                     <div className='bg-white col-span-3 p-8 rounded-lg row-span-1'>
                         <h4 className='mb-5 text-[20px]'>Quick Check-In</h4>
                         <div className='grid grid-cols-3 gap-5 '>
-                        <div className='bg-base-300 rounded-md pl-4 pr-4 pt-2 pb-2  items-center flex flex-col '>
+                        <div className='bg-base-300 rounded-md pl-4 pr-4 pt-2 pb-2  items-center flex flex-col  ' onClick={handleCallCard}>
                             <LuPhoneCall className='text-3xl mb-1' />
                             <p>Call</p>
                         </div>
-                        <div className='bg-base-300 rounded-md pl-4 pr-4 pt-2 pb-2 items-center flex flex-col'>
+                        <div className='bg-base-300 rounded-md pl-4 pr-4 pt-2 pb-2 items-center flex flex-col' onClick={handleTextCard}>
                             <MdOutlineTextsms className='text-3xl mb-1' />
                             <p>Text</p>
                         </div>
-                        <div className='bg-base-300 rounded-md pl-4 pr-4 pt-2 pb-2 items-center flex flex-col'>
+                        <div className='bg-base-300 rounded-md pl-4 pr-4 pt-2 pb-2 items-center flex flex-col' onClick={handleVideoCard}>
                             <LuVideo className='text-3xl mb-1' />
                             <p>Video</p>
                         </div>
