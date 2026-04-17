@@ -12,7 +12,7 @@ const TimeLine = () => {
      console.log(callCards );
     return (
     <div className='bg-base-300 pt-15 pb-5'>
-        <div className='w-3/5 mx-auto '>
+        <div className='sm:w-3/5 w-4/5 mx-auto '>
         <h1 className='text-[35px] font-bold '>Timeline</h1>
         <button className='mt-4 mb-4' > filter</button>
         </div>

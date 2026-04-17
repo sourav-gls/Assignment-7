@@ -17,9 +17,9 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex justify-between container mx-auto text-gray-400 items-center pt-10 pb-10 border-t-gray-400 '>
+            <div className='sm:flex text-center sm:text-start justify-between container mx-auto text-gray-400 items-center pt-10 pb-10 border-t-gray-400 '>
                 <p>© 2026 KeenKeeper. All rights reserved.</p>
-                <div className='flex gap-10 items-center'>
+                <div className='flex gap-4 sm:gap-10 items-center justify-center sm:justify-start'>
                     <p>Privacy Policy</p>
                     <p>Terms of Service</p>
                     <p>Cookies</p>

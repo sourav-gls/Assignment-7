@@ -2,7 +2,7 @@ import React from 'react';
 
 const SingleTextCard = ({card}) => {
     return (
-        <div className='w-3/5 mx-auto flex bg-white rounded-md gap-4 mb-4  p-4 items-center'>
+        <div className='sm:w-3/5 w-4/5 mx-auto flex bg-white rounded-md gap-4 mb-4  p-4 items-center'>
                 <div>
                      <img src="/assets/text.png" alt="" />
                 </div>

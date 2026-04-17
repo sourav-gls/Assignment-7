@@ -9,6 +9,7 @@ import Stats from './pages/stats/Stats';
 import Home from './pages/home/Home';
 import CardDetails from './pages/details/CardDetails';
 import CallCardProvider from './context/CallCardProvider';
+import NotFoundPage from './pages/notFound';
 
 const router = createBrowserRouter(
   [
@@ -35,7 +36,7 @@ const router = createBrowserRouter(
       },
 
     ],
-    errorElement: <h2>this page is not available</h2>
+    errorElement: <NotFoundPage />,
   },
 
 ]

@@ -32,7 +32,7 @@ const total = callCards.length + textCards.length + videoCards.length
 relationships that matter most.</p>
             <button className='btn bg-[#244D3F] text-white rounded-md mt-8'> <FaPlus /> Add a Friend</button>
           </div >
-          <div className='w-3/4 mx-auto grid grid-cols-4 mt-10 gap-8 '>
+          <div className='w-3/4 mx-auto grid sm:grid-cols-4 mt-10 gap-8 '>
             <div className='bg-white text-center w-65 rounded-lg p-8'>
                 <h1 className='text-[30px] font-semibold text-[#244D3F]'>{cards.length}</h1>
                 <p className='text-gray-500'>Total Friends</p>
@@ -54,7 +54,7 @@ relationships that matter most.</p>
           <hr className='w-3/4 mx-auto border-gray-300 mt-10 mb-10'/>
           <div className='w-3/4 mx-auto  mt-10'>
             <h1 className='text-[25px]  font-semibold mb-10'>Your Friends</h1>
-            <div className='grid grid-cols-4 gap-8 '>
+            <div className='grid sm:grid-cols-4 gap-8 '>
                 {
                   cards.map((card) => {
                     return(

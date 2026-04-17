@@ -41,9 +41,9 @@ const handleVideoCard = () =>{
 
 
     return (
-        <div className='bg-base-300 pt-15 pb-15'>
-        <div className='w-3/5 mx-auto grid grid-cols-5 grid-rows-3 gap-5 '>
-            <div className=' bg-white text-center p-7 rounded-lg shadow-sm col-span-2 row-span-2 flex flex-col justify-center  '>
+        <div className='bg-base-300  pt-15 pb-15'>
+        <div className='sm:w-3/5 mx-auto grid grid-cols-3 grid-rows-6 sm:grid-cols-5 sm:grid-rows-3 gap-5 '>
+            <div className=' bg-white text-center p-7 rounded-lg shadow-sm sm:col-span-2 col-span-3 row-span-2 flex flex-col justify-center  '>
                       <div className='flex justify-center'>
                       <img src={expectedCard.avatar} alt="" className='w-20 h-20 rounded-full mb-3' />
                       </div>
@@ -76,14 +76,14 @@ const handleVideoCard = () =>{
                         <h1 className='text-xl font-semibold'>{expectedCard.nextDue}</h1>
                         <p className='text-gray-500 text-[16px]'>Next Due</p>
                     </div>
-                    <div className='col-span-3 row-span-1 bg-white rounded-lg p-5 space-y-3'>
+                    <div className='col-span-3 row-span-1 sm:row-span-1 bg-white rounded-lg p-5 space-y-3'>
                         <div className='flex justify-between items-center'>
                             <h4 className='text-[20px]'>Relationship Goal</h4>
                             <button className='btn'>Edit</button>
                         </div>
                         <p className='text-gray-500'>Connect every <span className='font-semibold text-black'>{expectedCard.goalDays} days</span></p>
                     </div>
-                    <div className='col-span-2 row-span-1 flex justify-between flex-col '>
+                    <div className=' col-span-3 sm:col-span-2 row-span-1 sm:row-span-1 flex justify-between flex-col '>
                         <div className='bg-white p-4 rounded-lg  font-semibold items-center justify-center    '> <span className='flex items-center justify-center gap-2'><MdAddAlert />  Snooze 2 weeks</span> </div>
                         <div className='bg-white p-4 rounded-lg text-center font-semibold'><span className='flex items-center justify-center gap-2'><FaBoxArchive />  Snooze 2 weeks</span></div>
                         <div className='bg-white p-4 rounded-lg text-center font-semibold text-red-500'><span className='flex items-center justify-center gap-2'><RiDeleteBin6Line /> Delete</span></div>
@@ -91,7 +91,7 @@ const handleVideoCard = () =>{
                         
                         
                     </div>
-                    <div className='bg-white col-span-3 p-8 rounded-lg row-span-1'>
+                    <div className='bg-white col-span-3 row-span-1 p-8 rounded-lg sm:row-span-1'>
                         <h4 className='mb-5 text-[20px]'>Quick Check-In</h4>
                         <div className='grid grid-cols-3 gap-5 '>
                         <div className='bg-base-300 rounded-md pl-4 pr-4 pt-2 pb-2  items-center flex flex-col  ' onClick={handleCallCard}>
