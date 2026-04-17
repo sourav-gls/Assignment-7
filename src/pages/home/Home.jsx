@@ -17,7 +17,7 @@ const onTrack = cards.filter((card => card.status==="On-Track"))
 const overDue = cards.filter((card => card.status==="Overdue"))
 
 const {callCards, textCards , videoCards } = useContext(CallCardContext) ;
-const total = callCards.length + textCards.length + videoCards.length
+const total = callCards.length + textCards.length + videoCards.length ;
 
 
 

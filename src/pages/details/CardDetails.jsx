@@ -5,6 +5,7 @@ import { MdAddAlert, MdOutlineTextsms } from 'react-icons/md';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { useParams } from 'react-router';
 import { CallCardContext } from '../../context/callCardContext';
+import { toast } from 'react-toastify';
 
 
 const cardsPromise = fetch('/data.json').then(res => res.json());
@@ -24,16 +25,19 @@ console.log(expectedCard)
 const {callCards ,setCallCards ,textCards , setTextCards ,videoCards , setVideoCards} = useContext(CallCardContext)
 
 const handleCallCard = () =>{
-    setCallCards([...callCards , expectedCard])
+    setCallCards([...callCards , expectedCard]) ;
+    toast(`Call with ${expectedCard.name}`)
 
 }
 const handleTextCard = () =>{
-    setTextCards([...textCards , expectedCard])
+    setTextCards([...textCards , expectedCard]) ;
+    toast(`Text with ${expectedCard.name}`)
 
 }
 
 const handleVideoCard = () =>{
-    setVideoCards([...videoCards , expectedCard])
+    setVideoCards([...videoCards , expectedCard]) ;
+    toast(`Video with ${expectedCard.name}`)
 
 }
 
