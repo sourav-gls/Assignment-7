@@ -56,9 +56,9 @@ relationships that matter most.</p>
             <h1 className='text-[25px]  font-semibold mb-10'>Your Friends</h1>
             <div className='grid sm:grid-cols-4 gap-8 '>
                 {
-                  cards.map((card) => {
+                  cards.map((card , ind) => {
                     return(
-                    <Card  card={card}/>
+                    <Card  card={card} key={ind}/>
                     )
                   })
                 }
