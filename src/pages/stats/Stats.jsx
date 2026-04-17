@@ -16,7 +16,9 @@ const Stats = () => {
 
 return(
     <div className='bg-base-300 pt-15 pb-15'>
+      <h1 className='text-center font-semibold text-3xl mb-3'>Friendship Analytics</h1>
     <div className='w-3/5 mx-auto item center justify-center flex bg-white rounded-3xl pt-5 pb-5 '>
+    
         <PieChart style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
       <Pie
         data={data}
